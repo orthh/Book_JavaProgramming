@@ -3,9 +3,8 @@ package chap04;
 import java.util.Scanner;
 
 public class WordGameApp {
+
 	
-	int peopleCount;
-	Player[] playerList;
 	String start;
 
 	public WordGameApp() {
@@ -19,8 +18,8 @@ public class WordGameApp {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("끝말잇기 게임을 시작합니다.");
 		System.out.print("게임에 참가하는 인원은 몇명입니까>>");
-		peopleCount = sc.nextInt();
-		playerList = new Player[peopleCount];
+		int peopleCount = sc.nextInt();
+		Player[]playerList = new Player[peopleCount];
 		
 		// 객체 생성
 		for(int i=0; i<playerList.length; i++) {
