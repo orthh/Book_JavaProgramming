@@ -33,6 +33,7 @@ public class SeatTable {
 	public int findIndex(Seat[] table, String name) {
 		int result = -1;
 		for(int i=0; i<table.length; i++) {
+			System.out.println((table[i].getStatus()).equals(name));
 			if(table[i].getStatus().equals(name)) {
 				result = i;
 				return result;
@@ -73,7 +74,7 @@ public class SeatTable {
 	
 	
 	public String getSeatTable(String tableName){
-		String temp = "";
+		String temp = tableName + ">> ";
 		if(tableName.equals("s")) {
 			for(Seat item: s) {
 				temp += item.getStatus() + " ";

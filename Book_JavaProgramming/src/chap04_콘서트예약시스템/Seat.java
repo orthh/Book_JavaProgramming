@@ -8,7 +8,7 @@ public class Seat {
 		if(status == null) {
 			return "--- ";
 		}
-		return status+ " ";
+		return status;
 	}
 
 	public void setStatus(String status) {
