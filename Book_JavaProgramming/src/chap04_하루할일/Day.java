@@ -2,7 +2,9 @@ package chap04_하루할일;
 
 public class Day {
 	private String work;
-	private void set(String work) {
+	
+	
+	public void set(String work) {
 		this.work = work;
 	}
 	public String get() {
