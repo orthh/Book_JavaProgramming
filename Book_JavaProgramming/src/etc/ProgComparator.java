@@ -1,25 +1,23 @@
 package etc;
 
 import java.util.Arrays;
-import java.util.Comparator;
 
 public class ProgComparator {
 	
-	public static class StringComparator implements Comparator<String> {
-		@Override
-		public int compare(String o1, String o2) {
-			if(o1.charAt(1) > o2.charAt(1)) return 1;
-			return -1;
-		}
-	}
-	public static String[] solution(String[] strings, int n) {
-        Arrays.sort(strings, new StringComparator());
-        return strings;
+	public static int[] solution(int[] array, int[][] commands) {
+        int[] answer = new int[commands.length];
+        for(int i=0; i<commands.length; i++){
+            int[] temp = Arrays.copyOfRange(array,commands[i][0] - 1, commands[i][1]);
+            Arrays.sort(temp);
+            answer[i] = temp[commands[i][2] - 1];
+        }
+        return answer;
     }
 
 	public static void main(String[] args) {
-		String[] s = {"abcd", "abce", "cdx"};
-		for(String item : solution(s,2)) {
+		int[] s = {1, 5, 2, 6, 3, 7, 4};
+		int[][] c = {{2, 5, 3}, {4, 4, 1},{1, 7, 3}};
+		for(int item : solution(s,c)) {
 			System.out.println(item);
 		}
 	}
